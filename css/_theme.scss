@@ -1,0 +1,83 @@
+/**
+* Mixins
+*/
+
+@mixin font($font){
+  @font-face{
+    font-family: $font;
+    src: url($font-path + $font +'.ttf');
+  }
+}
+
+
+//paths
+$font-path: '../assets/fonts/';
+$img-path: '../assets/img/';
+
+
+//fonts
+@include font('Montserrat-Regular');
+@include font('Montserrat-Medium');
+@include font('Montserrat-SemiBold');
+@include font('Montserrat-Bold');
+@include font('Montserrat-SemiBoldItalic');
+@include font('CarterOne-Regular');
+
+$font-primary-regular: 'Montserrat-Regular';
+$font-primary-medium: 'Montserrat-Medium';
+$font-primary-semibold: 'Montserrat-SemiBold';
+$font-primary-bold: 'Montserrat-Bold';
+$font-primary-bolditalic: 'Montserrat-SemiBoldItalic';
+$font-secondary: 'CarterOne-Regular';
+
+
+/**
+* Variables (Colors)
+*/
+
+$primary: #F1D4AF;          //  light-orange
+$secondary: #C5E0DC;        //  sky-blue
+$tertiary: #E08E79;       //  light-red
+$dark:  #774F38;          //  chocolate-brown
+$light: #ECE5CE;          //  grey
+
+$black: #222;             //  black
+$white: #fff;             //  white
+
+
+/**
+* Variables (screen-widths)
+*/
+
+// $screen-xst: 320px;
+$screen-xs: 375px;
+$screen-sm: 425px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1440px;
+
+
+/**
+* Commons
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  font-size: 14px;
+  font-family: $font-primary-regular;
+  touch-action: manipulation;
+  
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 400;
+}
+
+a{
+  text-decoration: none;
+}
