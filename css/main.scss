@@ -8,10 +8,14 @@
     top: 0;
     right: 0;
     z-index: 99;
-    // background-color: $light;
-    width: 100%;
     
-    background-color: rgba(0,0,0,0);
+    width: 100%;
+    // background-color: rgba(0,0,0,0);
+    @media only screen and (min-width: $s3){
+      display: block;
+      background-color: $light;
+      overflow: hidden;
+    }
     &.back-shadow{
       transition: background-color 0.2s linear;
       opacity: 1;
@@ -29,6 +33,9 @@
       position: absolute;
       right: 0;
       z-index: 2;
+      @media only screen and (min-width: $s3){
+        display: none;
+      }
       span{
         // transition: 
         display: inline-block;
@@ -57,12 +64,28 @@
         box-shadow: 0 0 10px #000;
         padding: 90px 0 30px 30px;
       }
+      @media only screen and (min-width: $s3){
+        position: static;
+        text-align: right;
+        margin-top: 8px;
+        padding-right: 40px;
+        display: block;
+        width: 50%;
+        margin-left: 50%;
+      }
       li{
         height: 50px;
+        @media only screen and (min-width: $s3){
+          display: inline-block;
+          margin-left: 20px;
+        }
         a{
           color: $dark;
           font-size: 23px;
           letter-spacing: 0.05em;
+          @media only screen and (min-width: $s3){
+            font-size: 18px;
+          }
           &.blog{
             font-size: 18px;
             font-family: $font-primary-bold;
@@ -71,6 +94,11 @@
             padding: 10px 30px;
             margin: 7px 0;
             display: inline-block;
+            @media only screen and (min-width: $s3){
+              font-size: 14px;
+              height: 40px;
+              line-height: 1.6;
+            }
           }
         }
       }
@@ -87,18 +115,34 @@
       margin-top: 75px;
       position: relative;
       min-height: 450px;
+      @media only screen and (min-width: $s3){
+        margin-top: 69px;
+        padding-top: 1px;
+        height: clamp(450px, 50vw, calc(100vh - 70px));
+      }
+      @media only screen and (min-width: $s4){
+        padding-left: 50px;
+      }
       .bk-home{
         position: absolute;
         width: 100%;
         height: 400px;
         bottom: 0;
         left: 0;
+        z-index: -1;
+        @media only screen and (min-width: $s3){
+          height: 100%;
+        }
         img{
           position: absolute;
           left: calc(50% + 5px);
           bottom: -1px;
           height: 100%;
           z-index: -1;
+          @media only screen and (min-width: $s3){
+            left: unset;
+            right: 0;
+          }
         }
       }
       h1{
@@ -106,7 +150,26 @@
         font-family: $font-primary-bold;
         color: $dark;
         margin-top: 15px;
-            margin-left: 15px;
+        margin-left: 15px;
+        transition: position 0.1s linear , font-size 0.1s linear;
+        cursor: pointer;
+        &.scrollset{
+          
+          position: fixed;
+          margin: unset;
+          top: 16px;
+          left: 40px;
+          font-size: 34px;
+        }
+        @media only screen and (min-width: $s2){
+          margin-top: 80px;
+        }
+        @media only screen and (min-width: $s3){
+          margin-top: 10vw;
+          z-index: 100;
+          position: relative;
+          font-size: clamp(36px, 5.4vw, 64px);;
+        }
       }
       .side{
         margin-top: 20px;
@@ -118,6 +181,11 @@
           color: $dark;
           line-height: 1.6;
           margin-top: 25px;
+          @media only screen and (min-width: $s3){
+            // font-size: 3.2vw;
+            font-size: clamp(24px, 3.2vw, 42px);
+            margin-top: clamp(25px, 2vw, 35px);
+          }
         }
         a{
           display: inline-block;
@@ -125,12 +193,19 @@
           padding: 10px 15px;
           color: $white;
           font-family: $font-primary-bold;
+          text-align: center;
+          @media only screen and (min-width: $s3){
+            font-size: clamp(18px, 2.1vw, 25px);
+            padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 36px);
+          }
           &#know-more{
             background-color: $tertiary;
-                margin-top: 40px;
+            margin-top: 40px;
           }
           &#let-connect{
             background-color: $dark;
+            min-width: 130px;
+            margin-bottom: 30px;
           }
         }
       }
@@ -138,9 +213,15 @@
     &#services{
       background-color: $dark;
       padding-bottom: 40px;
+      @media only screen and (min-width: $s1){
+        padding: 0px;
+      }
       .bk-serivces{
         width: 50%;
         display: inline-block;
+        @media only screen and (min-width: $s1){
+          width:30%;
+        }
         .title{
           color: $primary;
           text-transform: uppercase;
@@ -153,6 +234,9 @@
           left: 20px;
           letter-spacing: 6px;
           top: 35px;
+          @media only screen and (min-width: $s1){
+            display: none;
+          }
         }
         img{
           width:200px;
@@ -160,6 +244,18 @@
           position: relative;
           left: -16px;
           bottom: -88px;
+          @media only screen and (min-width: $s1){
+            width: 100%;
+            margin-top: 0px;
+            bottom: -5px;
+            left: unset;
+          }
+          @media only screen and (min-width: $s3){
+            width: 230px;
+          }
+          @media only screen and (min-width: $s4){
+            width: 22vw;
+          }
         }
       }
       
@@ -168,12 +264,40 @@
         display: inline-block;
         position: relative;
         left: -30px;
+        @media only screen and (min-width: $s1){
+          width: 69%;
+          left: 0px;
+          vertical-align: top;
+          margin-top: 4vw;
+        }
+        @media only screen and (min-width: $s1){
+          
+          margin-top: 30px;
+        }
         .work-box{
           text-align: center;
           width: 160px;
           margin-bottom: 40px;
+          max-width: 210px;
+          @media only screen and (min-width: $s1){
+            display: inline-block;
+            width: 31%;
+            margin-bottom: 0px;
+          }
+          @media only screen and (min-width: $s4){
+            
+            width: 32%;
+            max-width: 350px;
+          }
+          /* @media only screen and (min-width: $s3){
+            width: 230px;
+          } */
           &:first-child, &:last-child{
             margin-left: 48px;
+          
+            @media only screen and (min-width: $s1){
+              margin-left: 0px;
+            }
           }
           .work-icon{
             height: 100px;
@@ -183,17 +307,52 @@
             text-align: center;
             display: inline-block;
             margin-bottom: 20px;
+            @media only screen and (min-width: $s1){
+              height: 17vw;
+              width: 17vw;
+            }
+            @media only screen and (min-width: $s3){
+              height: 130px;
+              width: 130px;
+            }
+            @media only screen and (min-width: $s4){
+              height: 13vw;
+              width: 13vw;
+              display: block;
+              margin: 0 auto 2vw;
+            }
             img{
               height: 50px;
               margin-top: 25px;
+              @media only screen and (min-width: $s1){
+                height: 8.8vw;
+                margin-top: 4vw;
+              }
+              @media only screen and (min-width: $s3){
+                height: 67px;
+                margin-top: 31px;
+              }
+              @media only screen and (min-width: $s4){
+                height: 6.4vw;
+                margin-top: 3.4vw;
+              }
             }
           }
           .work-kind{
             color: $white;
             text-transform: uppercase;
-            font-family: $font-primary-bold;
+            font-family: $font-primary-semibold;
             font-size: 18px;
-    letter-spacing: 0.05em;
+            letter-spacing: 0.05em;
+            @media only screen and (min-width: $s1){
+              font-size: 2.5vw;
+            }
+            @media only screen and (min-width: $s3){
+              font-size: 18px;
+            }
+            @media only screen and (min-width: $s4){
+              font-size: 2vw;
+            }
           }
         }
       }
@@ -211,6 +370,11 @@
           top: -25px;
           left: 0;
           width: 50%;
+          @media only screen and (min-width: $s3){
+            top: -40px;
+            left: 0;
+            width: 40%;
+          }
         }
         .tech-title{
           position: absolute;
@@ -223,42 +387,84 @@
           text-orientation: upright;
           letter-spacing: 6px;
           color: $dark;
+          @media only screen and (min-width: $s1){
+            display: none;
+          }
         }
       }
       .all-techs{
         width: 75%;
         margin-left: 20%;
         margin-top: 35px;
+        @media only screen and (min-width: $s1){
+          width: 100%;
+          margin-left: unset;
+          text-align: center;
+        }
         img{
           width: 30%;
-          height:60px;
+          height: 60px;
+          // height: clamp(60px, 15vw, 100px);
           margin: 30px auto;
+          @media only screen and (min-width: $s1){
+            width: 13%;
+            margin-left: unset;
+            display: inline-block;
+            margin: 10px auto;
+            height: 8vw;
+            min-height: 60px;
+          }
           &[alt='nodejs']{
             // transform: scale(1.3);
             width: 60%;
+            @media only screen and (min-width: $s1){
+              width: 24%;
+              
+            }
           }
         }
-      }
-      .extra-techs{
-        margin-left: 40px;
-        margin-bottom: 30px;
-        img{
-          height: 60px;
-          margin: 12px;
-          width: 30%;
-          &[alt='mongodb']{
-            height: 45px;
-            position: relative;
-            top: -7px;
-            width: 48%;
-            min-width: 100px;
+      
+        .extra-techs{
+          margin-bottom: 30px;
+          @media only screen and (min-width: $s1){
+            text-align: center;
+            display: inline-block;
           }
-          
+          @media only screen and (min-width: $s4){
+            width: 50%;
+          }
+          img{
+            height: 60px;
+            margin: 12px;
+            width: 30%;
+            @media only screen and (min-width: $s1){
+              // width: 13%;
+              height: 8vw;
+              min-height: 60px;
+              margin: 2vw;
+            }
+            &[alt='mongodb']{
+              height: 45px;
+              position: relative;
+              top: -7px;
+              width: 48%;
+              min-width: 100px;
+              @media only screen and (min-width: $s1){
+                width: 45%;
+                height: 8vw;
+                top: 0;
+              }
+            }
+            
+          }
         }
       }
     }
     &#about{
       background: linear-gradient(180deg, $secondary 0%, $primary 100%);
+      @media only screen and (min-width: $s4){
+        padding-bottom: 16px;
+      }
       .my-intro{
         width: calc(100% - 20px);
         margin: 30px auto 50px;
@@ -266,6 +472,17 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         position: relative;
         padding-top: 1px;
+        padding-bottom: 1px;
+        min-height: 320px;
+        @media only screen and (min-width: $s3){
+          width: calc(100% - 80px);
+          margin: 50px 40px 80px;
+        }
+        @media only screen and (min-width: $s4){
+          width: calc(100% - 180px);
+          margin: 50px auto;
+          max-width: 1000px;
+        }
         img{
           &.abs{
             height: 60px;
@@ -276,7 +493,14 @@
           &.me{
             height: 200px;
             position: relative;
-            top: 4px;
+            top: 5px;
+            @media only screen and (min-width: $s1){
+              width: clamp(200px, 30%, 250px);
+              position: absolute;
+              bottom: 0;
+              top: unset;
+              height: auto;
+            }
           }
         }
         .title{
@@ -285,12 +509,33 @@
           margin: 25px;
           text-transform: capitalize;
           letter-spacing: 0.05em;
+          @media only screen and (min-width: $s3){
+            padding: 16px;
+            width: 70%;
+            margin-left: 29%;
+          }
+          @media only screen and (min-width: $s4){
+            font-size: 32px;
+          }
         }
         .description{
           padding: 16px;
           line-height: 2;
           letter-spacing: 0.05em;
           font-size: 16px;
+          @media only screen and (min-width: $s1){
+            margin-bottom: 30px;
+            line-height: 1.7;
+            width: 60%;
+            margin-left: 39%;
+          }
+          @media only screen and (min-width: $s3){
+            width: 70%;
+            margin-left: 29%;
+          }
+          @media only screen and (min-width: $s4){
+            font-size: 21px;
+          }
         }
       }
     }
@@ -307,6 +552,9 @@
           position: absolute;
           // width: 120px;
           width: clamp(80px, 27vw, 180px);
+          @media only screen and (min-width: $s3){
+            width: clamp(80px, 27vw, 230px);
+          }
           &[alt='1']{
             top: 0;
             left: 0;
@@ -323,7 +571,10 @@
         color: $dark;
         font-family: $font-primary-medium;
         margin-top: 30px;
-        margin-bottom: 12px
+        margin-bottom: 12px;
+        @media only screen and (min-width: $s1){
+          font-size: 36px;
+        }
       }
       .caption{
         font-family: $font-secondary;
@@ -331,22 +582,38 @@
         font-size: 18px;
         letter-spacing: 0.05em;
         // color: $primary;
+        @media only screen and (min-width: $s1){
+          font-size: 24px;
+        }
       }
 
       .mail{
         margin: 50px auto 80px;
+        @media only screen and (min-width: $s2){
+          margin: 70px auto 100px;
+        }
         .title{
           font-size: 16px;
           color: $dark;
           display: block;
           margin-bottom: 15px;
           letter-spacing: 0.1em;
+          @media only screen and (min-width: $s1){
+            font-size: 21px;
+          }
+          
         }
         .value{
           font-family: $font-primary-bolditalic;
           letter-spacing: 0.05em;
           color: $dark;
           font-size: 18px;
+          @media only screen and (min-width: $s1){
+            font-size: 21px;
+          }
+          @media only screen and (min-width: $s4){
+            font-size: 24px;
+          }
         }
       }
       .last-note{
@@ -364,13 +631,26 @@
       letter-spacing: 0.1em;
       font-size: 16px;
       color: $white;
+      @media only screen and (min-width: $s3){
+        width: 45%;
+        display: inline-block;
+      }
     }
     
     .social-links{
       padding: 20px;
+      @media only screen and (min-width: $s3){
+        width: 54%;
+        display: inline-block;
+        font-size: 35px;
+        vertical-align: middle;
+      }
       a{
         margin: 15px;
         position: relative;
+        @media only screen and (min-width: $s3){
+          margin: 10px;
+        }
         &.facebook{
           top: 5px;
         }
