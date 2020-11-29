@@ -495,7 +495,7 @@
             position: relative;
             top: 5px;
             @media only screen and (min-width: $s1){
-              width: clamp(200px, 30%, 250px);
+              width: clamp(200px, 30%, 280px);
               position: absolute;
               bottom: 0;
               top: unset;
@@ -513,6 +513,7 @@
             padding: 16px;
             width: 70%;
             margin-left: 29%;
+            margin-bottom: 0;
           }
           @media only screen and (min-width: $s4){
             font-size: 32px;
