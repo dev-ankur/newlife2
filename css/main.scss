@@ -626,7 +626,7 @@
     text-align: center;
     background-color: $dark;
     width: 100%;
-    padding: 30px 16px;
+    padding: 50px 16px;
    
     .copyright{
       letter-spacing: 0.1em;
@@ -638,27 +638,6 @@
       }
     }
     
-    .social-links{
-      padding: 20px;
-      @media only screen and (min-width: $s3){
-        width: 54%;
-        display: inline-block;
-        font-size: 35px;
-        vertical-align: middle;
-      }
-      a{
-        margin: 15px;
-        position: relative;
-        @media only screen and (min-width: $s3){
-          margin: 10px;
-        }
-        &.facebook{
-          top: 5px;
-        }
-        img{
-
-        }
-      }
-    }
+    
   }
 }

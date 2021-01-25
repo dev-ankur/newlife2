@@ -912,7 +912,7 @@ a {
   text-align: center;
   background-color: #774F38;
   width: 100%;
-  padding: 30px 16px;
+  padding: 50px 16px;
 }
 
 .container footer .copyright {
@@ -926,33 +926,5 @@ a {
     width: 45%;
     display: inline-block;
   }
-}
-
-.container footer .social-links {
-  padding: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-  .container footer .social-links {
-    width: 54%;
-    display: inline-block;
-    font-size: 35px;
-    vertical-align: middle;
-  }
-}
-
-.container footer .social-links a {
-  margin: 15px;
-  position: relative;
-}
-
-@media only screen and (min-width: 768px) {
-  .container footer .social-links a {
-    margin: 10px;
-  }
-}
-
-.container footer .social-links a.facebook {
-  top: 5px;
 }
 /*# sourceMappingURL=main.css.map */
